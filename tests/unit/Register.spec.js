@@ -12,7 +12,7 @@ describe('Register.vue', () =>{
         expect(true).toBe(true)
     })
     it('renders a vue instance', () => {
-        expect(shallowMount(Register).isVueInstance()).toBe(true);
+        expect(shallowMount(Register).vm).toBeTruthy();
     })
 
     it('has a button', () => {
@@ -28,7 +28,7 @@ describe('Register.vue', () =>{
     });
 
     it('has a image', () => {
-        expect(wrapper.contains('#side-img')).toBe(true);
+        expect(wrapper.find('#side-img')).toBeTruthy();
     });
 
     it('has a eye button for seeing the password', () => {
