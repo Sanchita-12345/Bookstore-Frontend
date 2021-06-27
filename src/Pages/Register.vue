@@ -5,10 +5,10 @@
         <p>Online Book Shopping</p>
         <div class="box">
             <div class="headings">
-                <h5 class="signin" id="sign-in">Login</h5>
-                <h5 class="signup" id="sign-up">signup</h5>
+                <h5 class="signin" :class="{ active: isVisible }" @click="isVisible = true" id="sign-in">Login</h5>
+                <h5 class="signup" :class="{ active: !isVisible }" @click="isVisible = false" id="sign-up">signup</h5>
             </div>
-            <form @submit.prevent="handleSubmit">
+            <form ref="myForm" @submit.prevent="handleSubmit">
 
                 <div class="fullname">
                     <p>FullName</p>
@@ -18,7 +18,7 @@
                     <p>EmailID</p>
                     <input type="email" class="emailbox" required v-model="email" id="email-id" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 </div>
-                <div class="pass">
+                <div class="password-section">
                     <p>Password</p>
                     <input :type="passwordType" class="password" id="pwd" v-model="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$">
                     <img src="../../src/assets/show-hide-icon-28.jpg" onclick="show();" id="eye" @click="togglePasswordButton()">
@@ -32,7 +32,6 @@
             </form>
         </div>
     </div>
-
 </div>
 </template>
 
@@ -45,8 +44,9 @@ export default {
             fullname: '',
             email: '',
             password: '',
-            phone: '',
+            mobile: '',
             passwordType: "password",
+            isVisible: false,
         }
     },
     methods: {
@@ -64,6 +64,7 @@ export default {
             service.userRegister(userData).then(response => {
                 if (response.status == 201) {
                 alert("user registered successfully");
+                this.$refs.myForm.reset();
             }
             return response;
             }).catch(error =>{
