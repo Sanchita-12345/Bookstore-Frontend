@@ -5,8 +5,12 @@
         <p>Online Book Shopping</p>
         <div class="box">
             <div class="headings">
-                <h5 class="signin" :class="{ active: isVisible }" @click="isVisible = true" id="sign-in">Login</h5>
-                <h5 class="signup" :class="{ active: !isVisible }" @click="isVisible = false" id="sign-up">signup</h5>
+                <router-link to="/login">
+                    <h5 class="signin" :class="{ active: isVisible }" @click="isVisible = true" id="sign-in">Login</h5>
+                </router-link>
+                <router-link to="/register">
+                    <h5 class="signup" :class="{ active: !isVisible }" @click="isVisible = false" id="sign-up">signup</h5>
+                </router-link>
             </div>
             <form ref="myForm" @submit.prevent="handleSubmit">
 
@@ -54,20 +58,20 @@ export default {
             this.passwordType = this.passwordType === 'password' ? 'text' : 'password'
         },
 
-        async handleSubmit(){
+        async handleSubmit() {
             let userData = {
-                fullname :this.fullname,
+                fullname: this.fullname,
                 email: this.email,
                 password: this.password,
                 mobile: this.mobile
             }
             service.userRegister(userData).then(response => {
                 if (response.status == 201) {
-                alert("user registered successfully");
-                this.$refs.myForm.reset();
-            }
-            return response;
-            }).catch(error =>{
+                    alert("user registered successfully");
+                    this.$refs.myForm.reset();
+                }
+                return response;
+            }).catch(error => {
                 alert("Error...!!!");
                 return error;
             })
