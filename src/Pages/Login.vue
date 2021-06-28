@@ -5,8 +5,12 @@
         <p>Online Book Shopping</p>
         <div class="box">
             <div class="headings">
-                <h5 class="signin" :class="{ active: isVisible }" @click="isVisible = true" id="sign-in">Login</h5>
-                <h5 class="signup" :class="{ active: !isVisible }" @click="isVisible = false" id="sign-up">signup</h5>
+                <router-link to="/login">
+                    <h5 class="signin" :class="{ active: isVisible }" @click="isVisible = true" id="sign-in">Login</h5>
+                </router-link>
+                <router-link to="/register">
+                    <h5 class="signup" :class="{ active: !isVisible }" @click="isVisible = false" id="sign-up">signup</h5>
+                </router-link>
             </div>
             <form ref="myForm" @submit.prevent="handleSubmit">
                 <div class="username">
@@ -18,7 +22,9 @@
                     <input :type="passwordType" class="password" id="pwd" v-model="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$">
                     <img src="../../src/assets/show-hide-icon-28.jpg" onclick="show();" id="eye" @click="togglePasswordButton()">
                 </div>
-                <a href="">forgot password?</a>
+                <div class="forgot-password">
+                    <a href="http://localhost:8080/forgot-password">forgot password?</a>
+                </div>
                 <button class="btn-section" id="login-btn" type="submit">Login</button>
             </form>
         </div>
@@ -28,10 +34,10 @@
 
 <script>
 import service from '../service/User'
-export default{
+export default {
     name: 'Login',
     data() {
-        return{
+        return {
             email: '',
             password: '',
             passwordType: "password",
@@ -42,16 +48,16 @@ export default{
         togglePasswordButton() {
             this.passwordType = this.passwordType === 'password' ? 'text' : 'password'
         },
-        async handleSubmit(){
+        async handleSubmit() {
             let userData = {
                 email: this.email,
                 password: this.password
             }
-            service.userLogin(userData).then(response =>{
+            service.userLogin(userData).then(response => {
                 localStorage.getItem('token', response.data.token);
                 alert("logged in..");
                 this.$refs.myForm.reset();
-            }).catch(error =>{
+            }).catch(error => {
                 alert("error...!!! invalid input");
                 return error;
             })
