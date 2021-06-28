@@ -1,3 +1,12 @@
+/*************************************************************************
+* Purpose : to test the Register component
+*
+* @file : Login.spec.js
+* @author : Sanchita Barik <sanchitabarik20@gmail.com>
+* @since : 26/06/2021
+*
+**************************************************************************/
+
 import Register from '../../src/Pages/Register.vue';
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 describe('Register.vue', () =>{
