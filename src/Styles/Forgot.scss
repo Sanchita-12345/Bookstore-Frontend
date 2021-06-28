@@ -1,0 +1,78 @@
+@import "colors";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-left: 75px;
+    color: $black;
+    text-align: left;
+font: normal normal medium 25px/33px Roboto;
+}
+
+.box {
+    margin-left: 500px;
+    margin-top: 150px;
+    width: 424px;
+    height: 287px;
+}
+
+.inner-box {
+    padding: 20px;
+}
+.inner-box p{
+    color: $palegrey;
+}
+.username p{
+    margin-top: 20px;
+    margin-left: 18px;
+    width: 45px;
+    height: 13px;
+    font: normal normal normal Roboto;
+    letter-spacing: 0px;
+    color: $light_black;
+    text-transform: capitalize;
+    opacity: 1;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.emailbox{
+    background: $pale_white 0% 0% no-repeat padding-box;
+    border: 1px solid $deepgrey;;
+    border-radius: 2px;
+    opacity: 1;
+    margin-left: -5px;
+    margin-top: 10px;
+    width: 305px;
+    height: 35px;
+}
+
+.btn-section{
+    margin-left: -5px;
+    width: 305px;
+    height: 37px;
+    background: $maroon 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    color:$white;
+    margin-top: 40px;
+    border: none;
+}
+form {
+    background-color: $white;
+    width: 410px;
+    height: 287px;
+    margin: 10px auto 10px auto;
+    padding: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px -3px $deepgrey;
+    text-align: center;
+}
