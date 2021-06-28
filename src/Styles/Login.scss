@@ -148,7 +148,7 @@ h5{
     margin-top: 40px;
     border: none;
 }
-a {
+.forgot-password a {
     margin-left: 224px;
 	color: $black;
     font-size: 14px;
@@ -164,4 +164,9 @@ a {
     text-decoration-style: solid;
     text-decoration-thickness: 5px;
     border-radius: 4px;
+}
+
+router-link{
+    font-size: 22px;
+    text-decoration: none;
 }
