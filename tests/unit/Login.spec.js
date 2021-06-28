@@ -1,3 +1,12 @@
+/*************************************************************************
+* Purpose : to test the Login component
+*
+* @file : Login.spec.js
+* @author : Sanchita Barik <sanchitabarik20@gmail.com>
+* @since : 27/06/2021
+*
+**************************************************************************/
+
 import Login from '../../src/Pages/Login.vue';
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 describe('Login.vue', () =>{
