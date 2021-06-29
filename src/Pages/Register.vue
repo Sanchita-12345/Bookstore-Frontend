@@ -68,6 +68,7 @@ export default {
             service.userRegister(userData).then(response => {
                 if (response.status == 201) {
                     alert("user registered successfully");
+                    this.$router.push('/login');
                     this.$refs.myForm.reset();
                 }
                 return response;
