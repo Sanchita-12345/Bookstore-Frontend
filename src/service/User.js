@@ -11,4 +11,7 @@ export default{
     userForgotPassword(data){
         return axios.postData("/auth/sendPasswordResetLink",data);
     },
+    userResetPassword(data){
+        return axios.postData("/auth/resetPassword",data);
+    }
 }
