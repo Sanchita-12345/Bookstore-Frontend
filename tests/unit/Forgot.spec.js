@@ -40,7 +40,7 @@ describe('Forgot.vue', () =>{
         expect(wrapper.find('#forgot-title').exists()).toBe(true);
     });
 
-    it('has a title Login', () =>{
+    it('has a title', () =>{
         expect(wrapper.find('#forgot-title').text()).toBe('Forgot Your Password?');
     })
 })
