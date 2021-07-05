@@ -13,5 +13,8 @@ export default{
     },
     userResetPassword(data){
         return axios.postData("/auth/resetPassword",data);
-    }
+    },
+    userDisplayBooks(data){
+        return axios.getData("/displayBooks",data);
+    },
 }
