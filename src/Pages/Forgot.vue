@@ -30,9 +30,11 @@ export default {
                 email: this.email
             }
             service.userForgotPassword(userData).then(response => {
-                console.log(response);
-                alert("mail is sended successfully")
-                this.$router.push('/resetPassword/:resetToken')
+                if(response.status == 200){
+                    alert("mail is sended successfully")
+                    this.$router.push('/resetPassword')
+                    return response;
+                }
             }).catch(error =>{
                 alert("given email id is not registered...!!!");
                 return error;
