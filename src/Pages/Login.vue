@@ -54,9 +54,12 @@ export default {
                 password: this.password
             }
             service.userLogin(userData).then(response => {
-                localStorage.getItem('token', response.data.token);
-                alert("logged in..");
-                this.$refs.myForm.reset();
+                if(response.status == 200){
+                    alert("logged in..");
+                    localStorage.setItem('token', response.data.token);
+                    this.$router.push('/dashboard');
+                    return response;
+                }
             }).catch(error => {
                 alert("error...!!! invalid input");
                 return error;
