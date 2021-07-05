@@ -4,6 +4,8 @@ import Register from './Pages/Register.vue'
 import Login from './Pages/Login.vue'
 import Forgot from './Pages/Forgot.vue'
 import Reset from './Pages/Reset.vue'
+import Dashboard from './components/Dashboard.vue'
+import DisplayBooks from './components/DisplayBooks.vue'
 
 Vue.use(Router)
 export  default new Router({
@@ -24,6 +26,15 @@ export  default new Router({
         {
             path:'/resetPassword/:resetToken',
             component:Reset
-        }
+        },
+        {
+            path:'/dashboard',
+            component:Dashboard,
+            children:[{
+                path:'/displayBooks',
+                component: DisplayBooks
+            },
         ]
+        },
+    ]
 })
