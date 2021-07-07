@@ -17,4 +17,7 @@ export default{
     userDisplayBooks(data){
         return axios.getData("/displayBooks",data);
     },
+    userDisplayParticularBook(data){
+        return axios.getData(`/displayParticularBook/${data.id}`,data);
+    },
 }
