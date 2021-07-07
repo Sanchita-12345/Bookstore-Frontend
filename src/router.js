@@ -6,6 +6,7 @@ import Forgot from './Pages/Forgot.vue'
 import Reset from './Pages/Reset.vue'
 import Dashboard from './components/Dashboard.vue'
 import DisplayBooks from './components/DisplayBooks.vue'
+import ShowBook from './components/ShowBook.vue'
 
 Vue.use(Router)
 export  default new Router({
@@ -34,6 +35,10 @@ export  default new Router({
                 path:'/displayBooks',
                 component: DisplayBooks
             },
+            {
+                path:'/displayParticularBook',
+                component: ShowBook
+            }
         ]
         },
     ]
