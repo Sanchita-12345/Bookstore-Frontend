@@ -1,7 +1,7 @@
 <template>
 <div class="order-place">
     <div class="image-container">
-        <img src="../assets/Group 4132.png" alt="not found"/>
+        <img src="../assets/Group4132.png" alt="not found"/>
         
     </div>
     <div class="title-container">
