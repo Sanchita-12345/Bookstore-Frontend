@@ -20,4 +20,11 @@ export default{
     userDisplayParticularBook(data){
         return axios.getData(`/displayParticularBook/${data.id}`,data);
     },
+    userAddToCart(data){
+        return axios.updateData(`/addToCart/${data.id}`,data);
+    },
+    userRemoveFromCart(data){
+        return axios.deleteData(`/removeFromCart/${data.id}`,data);
+    }
+
 }
