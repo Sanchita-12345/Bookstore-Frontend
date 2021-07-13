@@ -15,6 +15,23 @@ export default class AxiosService{
     getData(url,data){
         return axios.get(url,data).then(response =>{
             return response;
+        }).catch(error =>{
+            return error;
+        })
+    }
+
+    updateData(url, data){
+        return axios.put(url, data).then(response=>{
+            return response;
+        }).catch(error=>{
+            return error;
+        })
+    }
+
+    deleteData(url, data){
+        return axios.delete(url, data).then(response=>{
+            localStorage.getItem('token', response.data.token);
+            return response;
         }).catch(error=>{
             return error;
         })
