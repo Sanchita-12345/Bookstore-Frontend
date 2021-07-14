@@ -25,6 +25,11 @@ export default{
     },
     userRemoveFromCart(data){
         return axios.deleteData(`/removeFromCart/${data.id}`,data);
+    },
+    customerRegister(data){
+        return axios.postData("/customerRegistration",data);
+    },
+    mailSendSuccessfully(data){
+        return axios.postData("/mail",data);
     }
-
 }
