@@ -9,6 +9,7 @@ import DisplayBooks from './components/DisplayBooks.vue'
 import Orderplace from './components/Orderplace.vue'
 import Checkout from './components/Checkout.vue'
 import CustomerDetails from './components/CustomerDetails.vue'
+
 Vue.use(Router)
 export  default new Router({
     mode:'history',
@@ -26,7 +27,7 @@ export  default new Router({
             component:Forgot
         },
         {
-            path:'/resetPassword/:resetToken',
+            path:'/resetPassword',
             component:Reset
         },
         {
@@ -36,7 +37,6 @@ export  default new Router({
                 path:'/displayBooks',
                 component: DisplayBooks
             },
-            
             
         ]
         },
