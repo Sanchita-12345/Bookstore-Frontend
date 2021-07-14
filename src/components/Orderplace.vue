@@ -8,8 +8,8 @@
         <p>Order placed Successfully</p>
     </div>
     <div class="message-section">
-        <p>hurray!!!your order is confirmed the order id is #123456 
-            save the order id for further communication..</p>
+        <p>hurray!!!your order is confirmed and placed successfully
+            contact us in below details for further communication..</p>
     </div>
     <div class="title-section">
         <div class="email-us">
