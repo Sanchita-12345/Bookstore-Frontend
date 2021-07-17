@@ -19,34 +19,66 @@
                 <p class="profile-content">Profile</p>
             </div>
             <div class="cart">
-                <a><i class="fas fa-cart-plus"></i></a>
-                <p class="cart-content">Cart</p>
+                <a><i class="fas fa-cart-plus" @click="shownComponent='Cart'"></i></a>
+                <p class="cart-content">cart <span class="length" v-if="booksCount">{{booksCount}}</span></p>
             </div>
         </div>
     </nav>
     <div class="main-body">
         <div class="books-total">
-            <h3>Books<span class="items">(128items)</span></h3>
         </div>
         <div class="sort-books">
-            <select class="options">
-                <option value="volvo">sort by relevance</option>
+            <select class="options" @change="applyOption">
+                <option disabled value="">Sort by relevance</option>
+                <option value="HighToLow">price:High to Low</option>
+                <option value="LowToHigh">price:Low to High</option>
             </select>
         </div>
     </div>
-    <DisplayBooks />
+
+    <div v-if="flam==false">
+        <h2>Hello</h2>
+    </div>
+    <DisplayBooks v-show="flag==='noOrder' && shownComponent==='DisplayBooks'" @update-books-count="(n)=>booksCount=n" />
+    <Cart v-show=" shownComponent==='Cart'" />
+    <sortBooksLowtoHigh v-show="flag==='lowToHigh'" @update-books-count="(n)=>booksCount=n" />
+    <sortBooksHightoLow v-show="flag==='highToLow'" @update-books-count="(n)=>booksCount=n" />
 </div>
 </template>
 
 <script>
 import DisplayBooks from './DisplayBooks.vue'
+import sortBooksLowtoHigh from './sortBooksLowtoHigh.vue'
+import sortBooksHightoLow from './sortBooksHightoLow.vue'
+import Cart from './Cart.vue'
 export default {
     components: {
-        DisplayBooks
+        DisplayBooks,
+        sortBooksLowtoHigh,
+        sortBooksHightoLow,
+        Cart
     },
     data() {
-        return {}
+        return {
+            shownComponent: 'DisplayBooks',
+            booksCount: 0,
+            flag: 'noOrder',
+            brand: 'Bookstore',
+            name: '',
+            flam: true,
+            visible: true,
+        }
     },
+    methods: {
+        flip() {
+            this.flam = !this.flam;
+        },
+        applyOption(evt) {
+            if (evt.target.value === "HighToLow") {
+                this.flag = 'highToLow';
+            } else this.flag = 'lowToHigh';
+        },
+    }
 }
 </script>
 
