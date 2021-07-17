@@ -9,6 +9,7 @@
     border-radius: 21px;
     opacity: 1;
 }
+
 img{
     margin-top: 52px;
     margin-left: 53px;
@@ -18,6 +19,7 @@ img{
     opacity: 1;
     border-radius: 50%;
 }
+
 .container p{
     color:$light_black;
     margin-top: 31px;
@@ -33,6 +35,7 @@ img{
     opacity: 1;
     font-weight: 500;
 }
+
 .box{
     background: $pale_white 0% 0% no-repeat padding-box;
     box-shadow: 0px 5px 15px $boxshawdow_black;
@@ -44,42 +47,45 @@ img{
     margin-top: -410px;
     margin-left: 350px;
 }
+
 .headings .signin{
     display:flex;
-  float:left;
-  opacity: 1;
-  padding-top: 28px;
-  margin-left: 65px;
-  color: $light_black;
-  text-transform: uppercase;
-  width: 89px;
-  height: 33px;
-  text-align: left;
-  letter-spacing: 0px;
-  color: $light_black;
-  text-transform: uppercase;
-  cursor: pointer;
+    float:left;
+    opacity: 1;
+    padding-top: 28px;
+    margin-left: 65px;
+    color: $light_black;
+    text-transform: uppercase;
+    width: 89px;
+    height: 33px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: $light_black;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 h5{
     font-size: 25px;
 }
+
 .headings .signup{
     display:flex;
-  float:left;
-  opacity: 1;
-  padding-top: 28px;
-  margin-left: 65px;
-  color: $light_black;
-  text-transform: uppercase;
-  width: 89px;
-  height: 33px;
-  text-align: left;
-  letter-spacing: 0px;
-  color: $light_black;
-  text-transform: uppercase;
-  cursor: pointer;
+    float:left;
+    opacity: 1;
+    padding-top: 28px;
+    margin-left: 65px;
+    color: $light_black;
+    text-transform: uppercase;
+    width: 89px;
+    height: 33px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: $light_black;
+    text-transform: uppercase;
+    cursor: pointer;
 }
+
 .username p{
     margin-top: 120px;
     margin-left: 53px;
@@ -92,6 +98,7 @@ h5{
     opacity: 1;
     margin-bottom: 0px;
 }
+
 .emailbox{
     background: $pale_white 0% 0% no-repeat padding-box;
     border: 1px solid $deepgrey;
@@ -101,6 +108,7 @@ h5{
     width: 283px;
     height: 35px;
 }
+
 .password-section p{
     margin-top: 30px;
     margin-left: 53px;
@@ -113,6 +121,7 @@ h5{
     opacity: 1;
     margin-bottom: 0px;
 }
+
 .password{
     background: $pale_white 0% 0% no-repeat padding-box;
     border: 1px solid $deepgrey;
@@ -121,10 +130,9 @@ h5{
     margin-left: 53px;
     width: 283px;
     height: 35px;
-   
 }
+
 .iconeye {
-    // display: inline-block;
     margin-left: 30px;
 }
 
@@ -137,6 +145,7 @@ h5{
     height: 27px;
     cursor: pointer;
 }
+
 .btn-section{
     margin-left: 53px;
     width: 283px;
@@ -148,6 +157,7 @@ h5{
     margin-top: 40px;
     border: none;
 }
+
 .forgot-password a {
     margin-left: 224px;
 	color: $black;
@@ -159,6 +169,7 @@ h5{
 		text-decoration: underline;
 	}
 }
+
 .signin.active, .signup.active{
     text-decoration: underline $maroon;
     text-decoration-style: solid;
@@ -169,4 +180,16 @@ h5{
 router-link{
     font-size: 22px;
     text-decoration: none;
+}
+
+@media(max-width:1024px){
+    .container{
+        margin-left: 1%;
+    }
+}
+
+@media(max-width:768px){
+    .container{
+        margin-left: 1%;
+    }
 }
