@@ -26,9 +26,11 @@ h3 {
 .inner-box {
     padding: 20px;
 }
+
 .inner-box p{
     color: $palegrey;
 }
+
 .username p{
     margin-top: 5px;
     margin-left: 18px;
@@ -43,6 +45,7 @@ h3 {
     font-size: 14px;
     font-weight: bold;
 }
+
 .reset-password{
     background: $pale_white 0% 0% no-repeat padding-box;
     border: 1px solid $deepgrey;;
@@ -65,6 +68,7 @@ h3 {
     margin-top: 40px;
     border: none;
 }
+
 form {
     background-color: $white;
     width: 410px;
@@ -75,4 +79,71 @@ form {
     overflow: hidden;
     box-shadow: 0 2px 10px -3px $deepgrey;
     text-align: center;
+}
+
+@media(max-width:1024px){
+    .box{
+        margin-left: 70%;
+        width: 110%;
+    }
+    h3{
+        margin-left: 40%;;
+    }
+}
+
+@media(max-width:768px){
+    .box{
+        margin-left: 70%;
+        width: 110%;
+    }
+    h3{
+        margin-left: 40%;
+    }
+}
+
+@media(max-width:375px){
+    .box{
+        margin-left: -4%;
+        width: 110%;
+        height: 50%;
+        font-size: 80%;
+    }
+    h3{
+        font-size: 150%;
+        margin-left: 34%;
+    }
+    .form{
+        width: -1%;
+        
+    }
+}
+
+@media(max-width:375px){
+    .box{
+        margin-left: -5%;
+        height: 80%;
+        font-size: 80%;
+    }
+    h3{
+        font-size: 150%;
+        margin-left: 34%;
+    }
+    .form{
+        width: 60%;
+    }
+}
+
+@media(max-width:812px){
+    .box{
+        margin-left: -5%;
+        height: 80%;
+        font-size: 80%;
+    }
+    h3{
+        font-size: 150%;
+        margin-left: 34%;
+    }
+    .form{
+        width: 60%;
+    }
 }
