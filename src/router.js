@@ -7,8 +7,9 @@ import Reset from './Pages/Reset.vue'
 import Dashboard from './components/Dashboard.vue'
 import DisplayBooks from './components/DisplayBooks.vue'
 import Orderplace from './components/Orderplace.vue'
-import Checkout from './components/Checkout.vue'
-import CustomerDetails from './components/CustomerDetails.vue'
+import sortBooksHightoLow from './components/sortBooksHightoLow.vue'
+import sortBooksLowtoHigh from './components/sortBooksLowtoHigh.vue'
+import Cart from './components/Cart.vue'
 
 Vue.use(Router)
 export  default new Router({
@@ -37,20 +38,23 @@ export  default new Router({
                 path:'/displayBooks',
                 component: DisplayBooks
             },
-            
+            {
+                path:'/sortBooksHightoLow',
+                component: sortBooksHightoLow
+            },
+            {
+                path:'/sortBooksLowtoHigh',
+                component: sortBooksLowtoHigh
+            },
+            {
+                path:'/cart',
+                component: Cart
+            }  
         ]
         },
         {
             path: '/orderplace',
             component: Orderplace
-        },
-        {
-            path: '/checkout',
-            component: Checkout
-        },
-        {
-            path: '/customerdetails',
-            component: CustomerDetails
-        }
+        },   
     ]
 })
