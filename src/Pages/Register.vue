@@ -57,7 +57,6 @@ export default {
         togglePasswordButton() {
             this.passwordType = this.passwordType === 'password' ? 'text' : 'password'
         },
-
         async handleSubmit() {
             let userData = {
                 fullname: this.fullname,
