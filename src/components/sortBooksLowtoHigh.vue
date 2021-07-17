@@ -6,7 +6,7 @@
     <div v-for="book in books" v-bind:key="book.id" class="card-book">
         <div class="image-section">
             <div class="image-container">
-                <img v-bind:src="book.file" style="height:135px;width:105px;"/>
+                <img v-bind:src="book.file" style="height:135px;width:105px;" />
             </div>
         </div>
         <div class="title-section">
@@ -38,7 +38,7 @@ export default {
         service.userDisplayBooksLowtoHigh().then(response => {
             this.books.push(...response.data);
             console.log(this.response);
-        }).catch(error=>{
+        }).catch(error => {
             alert("error while sorting");
             return error;
         })
@@ -71,7 +71,6 @@ export default {
     methods: {
         toggle(id) {
             this.clickedCard = id;
-            // this.card.content = this.notes.filter((note) => note.id === id);
             console.log(this.clickedCard);
         },
         flip() {
@@ -86,7 +85,7 @@ export default {
             }
             service.userUpdateCart(userData).then(response => {
                 return response;
-            }).catch(error=>{
+            }).catch(error => {
                 alert('error while adding to the cart');
                 return error;
             })
@@ -97,7 +96,7 @@ export default {
             }
             service.userRemoveFromCart(userData).then(response => {
                 return response;
-            }).catch(error=>{
+            }).catch(error => {
                 alert("error while removing from the cart");
                 return error;
             })
@@ -107,5 +106,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import "@/Styles/DisplayBooks.scss";
+@import "@/Styles/DisplayBooks.scss";
 </style>
