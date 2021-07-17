@@ -20,7 +20,7 @@ export default{
     userDisplayParticularBook(data){
         return axios.getData(`/displayParticularBook/${data.id}`,data);
     },
-    userAddToCart(data){
+    userUpdateCart(data){
         return axios.updateData(`/addToCart/${data.id}`,data);
     },
     userRemoveFromCart(data){
@@ -31,5 +31,17 @@ export default{
     },
     mailSendSuccessfully(data){
         return axios.postData("/mail",data);
+    },
+    userDisplayBooksHightoLow(data){
+        return axios.getData("/sortBooksHighToLow",data);
+    },
+    userDisplayBooksLowtoHigh(data){
+        return axios.getData("/sortBooksLowToHigh",data);
+    },
+    userDisplayCart(data){
+        return axios.getData("/cart",data);
+    },
+    decrementQuantity(data){
+        return axios.getData("/decrementQuantity",data);
     }
 }
