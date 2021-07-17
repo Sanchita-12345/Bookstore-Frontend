@@ -2,7 +2,7 @@
 <div class="main">
     <div class="first-section">
         <div class="content">
-            <!-- <h5>My Cart({{books.length}})</h5> -->
+            <h5>My Cart({{books.length}})</h5>
         </div>
         <div v-for="book in books" :key="book.id" class="container">
 
@@ -31,7 +31,7 @@
             <input type="text" v-if="hide==true" class="initial-btn" placeholder="Customer Details" />
         </div>
         <div v-if="hide==false" class="cutomer-detailsform">
-            
+
             <form @submit.prevent="" class="form">
                 <div class="customer-title">
                     Customer Details
@@ -76,8 +76,7 @@
                     </div>
                 </div>
             </form>
-            <router-link type="submit" class="checkout-btn" @click="handlesubmit()" to="/orderplace">CHECKOUT</router-link>
-    
+            <button type="submit" class="checkout-btn" @click="handlesubmit();">CHECKOUT</button>
         </div>
     </div>
 </div>
@@ -86,9 +85,9 @@
 <script>
 import service from '../service/User'
 export default {
-   created() {
+    created() {
         if (localStorage.getItem("reloaded")) {
-                localStorage.removeItem("reloaded");
+            localStorage.removeItem("reloaded");
         } else {
             localStorage.setItem("reloaded", "1");
             location.reload();
@@ -132,22 +131,13 @@ export default {
                 type: this.type,
             }
             service.customerRegister(userData).then(response => {
+                this.$router.push('/orderplace');
                 return response;
-            }).catch(error =>{
+            }).catch(error => {
                 alert("error in placed order");
                 return error;
             })
         },
-        // mounted(){
-        //     service.mailSendSuccessfully().then(response=>{
-        //         alert("order placed successfully");
-        //          this.$router.push({path: '/orderplace'});
-        //          return response;
-        //     }).catch(error =>{
-        //         alert("error in placed order");
-        //         return error;
-        //     })
-        // }
     }
 }
 </script>
