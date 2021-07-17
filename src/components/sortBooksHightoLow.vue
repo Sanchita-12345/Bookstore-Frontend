@@ -19,12 +19,12 @@
             Rs. {{book.price}}
         </div>
         <div class="buttons">
-            <div class="button-groups"  v-if="!addedBooks.includes(book.id)">
-                <button type="submit"  @click="handleCart(book.id);toggle(book.id);addedBooks.push(book.id)"  class="AddBag">Add to Bag</button>
-                <button  class="wishlist">wishlist</button>
+            <div class="button-groups" v-if="!addedBooks.includes(book.id)">
+                <button type="submit" @click="handleCart(book.id);toggle(book.id);addedBooks.push(book.id)" class="AddBag">Add to Bag</button>
+                <button class="wishlist">wishlist</button>
             </div>
             <div class="AddedBag" v-else>
-            <button class="big-btn" @click="removeFromCart(book.id);addedBooks=addedBooks.filter(id=>id!==book.id)">Added to Bag</button>
+                <button class="big-btn" @click="removeFromCart(book.id);addedBooks=addedBooks.filter(id=>id!==book.id)">Added to Bag</button>
             </div>
         </div>
     </div>
@@ -35,11 +35,11 @@
 <script>
 import service from '../service/User'
 export default {
- created() {
-            service.userDisplayBooksHightoLow().then(response => {
-                this.books.push(...response.data);
-            })
-        },
+    created() {
+        service.userDisplayBooksHightoLow().then(response => {
+            this.books.push(...response.data);
+        })
+    },
     data() {
         return {
             result: 0,
@@ -50,25 +50,24 @@ export default {
             flag: true,
             state: true,
             clickedCard: '',
-            addedBooks:[],
-             buttonBag: 'Add to Bag',
-            buttonWishlist:'wishlist',
-            buttonAddedBag:'Added to Bag',
+            addedBooks: [],
+            buttonBag: 'Add to Bag',
+            buttonWishlist: 'wishlist',
+            buttonAddedBag: 'Added to Bag',
             books: []
         }
     },
-     watch:{
-    addedBooks:{
-            handler(val){
-               this.$emit('update-books-count',val.length)
-             },
-             deep:true
-          }
-        },
+    watch: {
+        addedBooks: {
+            handler(val) {
+                this.$emit('update-books-count', val.length)
+            },
+            deep: true
+        }
+    },
     methods: {
         toggle(id) {
             this.clickedCard = id;
-            // this.card.content = this.notes.filter((note) => note.id === id);
             console.log(this.clickedCard);
         },
         flip() {
@@ -77,20 +76,20 @@ export default {
         Togglebtn() {
             this.flag = !this.flag;
         },
-       
-        handleCart(bookId){
-            let userData={
+
+        handleCart(bookId) {
+            let userData = {
                 id: bookId,
             }
-            service.userUpdateCart(userData).then(response=>{
+            service.userUpdateCart(userData).then(response => {
                 return response;
             })
         },
-        removeFromCart(bookId){
-            let userData={
-                id:bookId,
+        removeFromCart(bookId) {
+            let userData = {
+                id: bookId,
             }
-            service.userRemoveFromCart(userData).then(response=>{
+            service.userRemoveFromCart(userData).then(response => {
                 return response;
             })
         }
