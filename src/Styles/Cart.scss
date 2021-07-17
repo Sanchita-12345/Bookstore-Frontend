@@ -321,8 +321,8 @@ input[type="radio"]:checked + label::after{
     background: $blue;
     border-radius: 3px;
     color: $white;
-    padding-left: 40px;
-    padding-top: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
     text-decoration: none;
 }
 
