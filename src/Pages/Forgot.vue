@@ -18,7 +18,7 @@
 import service from '../service/User'
 export default {
     name: 'Forgot',
-    data() { 
+    data() {
         return {
             email: ''
         }
@@ -30,12 +30,12 @@ export default {
                 email: this.email
             }
             service.userForgotPassword(userData).then(response => {
-                if(response.status == 200){
+                if (response.status == 200) {
                     alert("mail is sended successfully")
                     this.$router.push('/resetPassword')
                     return response;
                 }
-            }).catch(error =>{
+            }).catch(error => {
                 alert("given email id is not registered...!!!");
                 return error;
             })
