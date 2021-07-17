@@ -24,15 +24,15 @@ describe('DisplayBooks.vue', () =>{
     });
 
     it('has a display books section',()=>{
-        expect(wrapper.find('.bookdisplay-section')).toBeTruthy();
+        expect(wrapper.find('.carddisplay-section')).toBeTruthy();
     });
 
     it('has a display books container',()=>{
-        expect(wrapper.find('.book')).toBeTruthy();
+        expect(wrapper.find('.card-book')).toBeTruthy();
     });
 
-    it('has a display books container',()=>{
-        expect(wrapper.find('.book')).toBeTruthy();
+    it('has a books quantity section',()=>{
+        expect(wrapper.find('.books-total')).toBeTruthy();
     });
 
     it('has a image section',()=>{
@@ -43,8 +43,8 @@ describe('DisplayBooks.vue', () =>{
         expect(wrapper.find('.image-container')).toBeTruthy();
     });
 
-    it('has a name section',()=>{
-        expect(wrapper.find('.name-section')).toBeTruthy();
+    it('has a title section',()=>{
+        expect(wrapper.find('.title-section')).toBeTruthy();
     });
 
     it('has a price section',()=>{
@@ -55,19 +55,19 @@ describe('DisplayBooks.vue', () =>{
         expect(wrapper.find('.author-section')).toBeTruthy();
     });
 
-    it('has a name section',()=>{
-        expect(wrapper.find('.name-section')).toBeTruthy();
+    it('has a buttons section',()=>{
+        expect(wrapper.find('.buttons')).toBeTruthy();
     });
 
-    it('has a rating section',()=>{
-        expect(wrapper.find('.rating')).toBeTruthy();
+    it('has a add to bag button section',()=>{
+        expect(wrapper.find('.AddBag')).toBeTruthy();
     });
 
-    it('has a star in rating section',()=>{
-        expect(wrapper.find('.fa-star')).toBeTruthy();
+    it('has a wishlist button section',()=>{
+        expect(wrapper.find('.wishlist')).toBeTruthy();
     });
 
-    it('has a quantity section',()=>{
-        expect(wrapper.find('.quantity')).toBeTruthy();
+    it('has a added to bag button',()=>{
+        expect(wrapper.find('.big-btn')).toBeTruthy();
     });
 });
